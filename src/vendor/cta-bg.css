@@ -1,0 +1,300 @@
+.full-width-bg h2 {
+  color: #FFF;
+  text-align: center;
+  font-family: "Host Grotesk";
+  font-size: 96px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.1 !important;
+}
+.main-wrapper {
+  position: relative;
+}
+.full-width-bg .hs-input.hs-fieldtype-intl-phone {
+  width: 100% !important;
+}
+.full-width-bg {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 30px;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;  
+  will-change: background-position;
+  position: relative;
+  overflow: hidden;
+}
+.full-width-bg .content-wrapper {
+  position: relative;
+}
+.bg-parallax {
+  position: absolute;
+  inset: -15%; /* extra bleed for movement */
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+}
+.full-width-bg .button-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.full-width-bg a.button.Secondary {
+  background: #fff;
+  color: #FF4D00;
+}
+
+.full-width-bg {
+  position: relative;
+  z-index: 3;
+}
+.full-width-bg.type2 p {
+  font-weight: normal;
+}
+.full-width-bg.type1 .content-wrapper {
+  z-index: 2;
+}
+
+.full-width-bg.type1 span.line1 {
+  background: #48DE93;
+  width: 1px;
+  height: 22px;
+}
+.full-width-bg.type1 span.line2 {
+  background: #48DE93;
+  width: 10px;
+  height: 22px;
+  margin-left: auto;
+}
+.full-width-bg.type1 span.line3 {
+  background: #48DE93;
+  width: 20px;
+  height: 22px;
+  margin-right: auto;
+  margin-left: 20px;
+}
+.full-width-bg.type1 span.line4 {
+  background: #48DE93;
+  width: 1px;
+  height: 22px;
+}
+.full-width-bg.type1 span.acc-lines.left-lines {
+  top: 50%;
+  transform: translateY(-50%);
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  right: 108%;
+  width: 130px;
+}
+.full-width-bg.type1 span.acc-lines.right-lines {
+  display: flex;
+  justify-content: space-between;
+  left: 100%;
+  position: absolute;
+  width: 30%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-top: 10px;
+}
+.full-width-bg .custom-form-group {
+  background: rgba(241, 237, 232, 0.95);
+  border-radius: 20px;
+  padding: 30px;
+  text-align: left;
+  margin-top:20px;
+  margin-bottom:30px;
+  max-width:750px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.full-width-bg .custom-form-group h3.form-title{
+  display:none;
+}
+.full-width-bg form .hs-input.hs-fieldtype-intl-phone {
+  border: 0;
+  padding: 0;
+}
+.full-width-bg form .hs-input {
+  -webkit-appearance: none;
+  background: transparent;
+  border: 2px solid #48de93;
+  border-radius: 0;
+  color: #182d21;
+  font-size: 16px;
+  height: 50px;
+  outline: none;
+  padding: 0 16px;
+  transition: border-color .2s ease, background-color .2s ease;
+}
+.full-width-bg form .hs-input[type="checkbox"] {
+	position: relative;
+}
+.full-width-bg form .hs-input[type="checkbox"]:checked {
+	background-color: #48de93;
+}
+.full-width-bg form .hs-input[type="checkbox"]::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 16px;
+	height: 16px;
+	background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.6666 5L7.49992 14.1667L3.33325 10' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+.full-width-bg form .hs-input[type="checkbox"]:checked::after {
+	opacity: 1;
+	visibility: visible;
+}
+
+.full-width-bg form .inputs-list .hs-input{
+  height:20px !important;
+  width:20px !important;
+  padding: 0 !important;
+}
+.full-width-bg input.hs-button.primary.large {
+  margin-top: 20px;
+  max-width: fit-content;
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+}
+.full-width-bg .hs-fieldtype-textarea.hs-input {
+  padding: 10px 15px;
+}
+.full-width-bg .inputs-list > li.hs-form-booleancheckbox {
+  margin: 0;
+}
+
+
+/* ==================== FULL WIDTH BG RESPONSIVE CSS ==================== */
+
+/* Large desktops */
+@media (max-width: 1400px) {
+  .full-width-bg h2 {
+    font-size: 80px;
+    line-height: 62px;
+  }
+}
+
+/* Small desktops */
+@media (max-width: 1200px) {
+  .full-width-bg h2 {
+    font-size: 68px;
+    line-height: 56px;
+  }
+
+  .full-width-bg {
+    padding: 24px;
+  }
+}
+
+/* Tablets portrait */
+@media (max-width: 991px) {
+  .full-width-bg h2 {
+    font-size: 56px;
+    line-height: 50px;
+  }
+
+  .full-width-bg {
+    min-height: 80vh;
+    padding: 20px;
+  }
+
+  .full-width-bg .button-group {
+    gap: 16px;
+  }
+}
+
+/* Large phones */
+@media (max-width: 767px) {
+  .full-width-bg.type1 h2 {
+    max-width: 400px;
+    margin-left:auto;
+    margin-right:auto;
+    
+  }
+  .full-width-bg h2 {
+    font-size: 42px;
+    line-height: 42px;
+  }
+
+  .full-width-bg {
+    min-height: 80vh;
+    padding:60px 16px;
+  }
+  .full-width-bg.type2{
+    min-height: 571px;
+  }
+
+  .full-width-bg .button-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .bg-parallax {
+    inset: -10%;
+  }
+  .full-width-bg.type2 h2 {
+    font-size: 50px !important;
+  }
+  .full-width-bg.type1 span.acc-lines.left-lines {
+    width: 100px;
+    right: 100%;
+  }
+  .full-width-bg.type1 span.acc-lines.right-lines {
+    right: 0;
+    width: 24%;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .full-width-bg .hs-input.hs-fieldtype-intl-phone {
+    width: 100% !important;
+  }
+  .full-width-bg .custom-form-group {
+    padding: 40px 20px;
+  }
+  .full-width-bg.type1 .button {
+    min-width: 180px;
+    justify-content: center;
+  }
+  .full-width-bg h2 {
+    font-size: 32px;
+    line-height: 34px;
+  }
+  .full-width-bg.type2{
+    padding-left:0;
+    padding-right:0;
+  }
+  .full-width-bg {
+    min-height: 60vh;
+    padding:40px 12px;
+  }
+
+  .full-width-bg .button-group {
+    gap: 10px;
+  }
+  .bg-parallax {
+    inset: -8%;
+    transform:none !important;
+  }
+  .full-width-bg.type2 .bg-parallax {
+    background-position: 20% 0%;
+    inset: 0;
+  }
+  .full-width-bg.type1 h2 {
+    max-width: 260px;
+  }
+}
