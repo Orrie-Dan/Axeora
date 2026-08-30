@@ -16,7 +16,7 @@ const photos = {
   marina: "/photos/dubai3.jpg",
   nairobi: "/photos/nairobi.jpg",
   cape: "/photos/cape-town.jpg",
-  dash: "/photos/dashboard.jpg",
+  commandCenter: "/photos/urban-command-center.png",
   data: "/photos/analytics.jpg",
   ident: "/photos/digital-identity.webp",
   auth: "/photos/citizen-authentication.webp",
@@ -529,7 +529,7 @@ export const productPages: Record<
       {
         title: "Urban Command Centers",
         body: "AI-powered centres where traffic, safety, and city services share one operational picture.",
-        image: photos.dash,
+        image: photos.commandCenter,
       },
       {
         title: "Smart Mobility",
@@ -588,6 +588,60 @@ export const africaCountries = [
   "Mozambique",
   "Madagascar",
 ];
+
+/** Globe node positions (640×640 viewBox) for hero map */
+export const africaGlobeNodes: Array<{
+  country: (typeof africaCountries)[number];
+  x: number;
+  y: number;
+  lx: number;
+  ly: number;
+}> = [
+  { country: "Senegal", x: 200, y: 242, lx: 72, ly: 232 },
+  { country: "Côte d'Ivoire", x: 265, y: 252, lx: 72, ly: 252 },
+  { country: "Ghana", x: 271, y: 279, lx: 72, ly: 279 },
+  { country: "Nigeria", x: 301, y: 265, lx: 72, ly: 305 },
+  { country: "Kenya", x: 420, y: 307, lx: 548, ly: 298 },
+  { country: "Tanzania", x: 393, y: 310, lx: 548, ly: 318 },
+  { country: "Rwanda", x: 415, y: 327, lx: 548, ly: 338 },
+  { country: "Zambia", x: 385, y: 364, lx: 548, ly: 362 },
+  { country: "South Africa", x: 385, y: 406, lx: 220, ly: 492 },
+  { country: "Burkina Faso", x: 252, y: 278, lx: 72, ly: 268 },
+  { country: "Mozambique", x: 417, y: 383, lx: 548, ly: 388 },
+  { country: "Madagascar", x: 463, y: 378, lx: 548, ly: 418 },
+];
+
+/** ISO 3166-1 alpha-2 codes for flag images */
+export const africaCountryFlags: Record<(typeof africaCountries)[number], string> = {
+  Senegal: "sn",
+  "Côte d'Ivoire": "ci",
+  Ghana: "gh",
+  Nigeria: "ng",
+  Kenya: "ke",
+  Tanzania: "tz",
+  Rwanda: "rw",
+  Zambia: "zm",
+  "South Africa": "za",
+  "Burkina Faso": "bf",
+  Mozambique: "mz",
+  Madagascar: "mg",
+};
+
+/** SVG node indices on the Africa map for each engagement country */
+export const africaCountryNodes: Record<string, number[]> = {
+  Senegal: [0],
+  "Côte d'Ivoire": [1, 2, 3],
+  Ghana: [2, 3],
+  Nigeria: [4],
+  Kenya: [5, 6],
+  Tanzania: [5, 6],
+  Rwanda: [7],
+  Zambia: [8],
+  "South Africa": [9, 11],
+  "Burkina Faso": [1, 2],
+  Mozambique: [10],
+  Madagascar: [10],
+};
 
 export const audiences = [
   {
@@ -754,7 +808,7 @@ export const useCases = [
     kicker: "Cities",
     title: "Intelligence from street to command centre",
     text: "Optimize traffic, public safety, and mobility with computer vision and AI-powered urban operations.",
-    image: photos.enforce,
+    image: photos.commandCenter,
     to: "/solutions/smart-cities",
   },
 ];
@@ -802,7 +856,6 @@ export const pageSections = [
   { id: "manufacturing", label: "Capabilities" },
   { id: "mission", label: "Mission" },
   { id: "use-case", label: "Use Cases" },
-  { id: "intelligence", label: "Stack" },
   { id: "trusted", label: "Partners" },
   { id: "get_started", label: "Get Started" },
 ];

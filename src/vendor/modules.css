@@ -1,6 +1,9 @@
 @import "./announce.css";
 @import "./header.css";
 @import "./homepage-banner.css";
+@import "./home-hero.css";
+@import "./africa-map.css";
+@import "./use-cases.css";
 @import "./product-slider.css";
 @import "./features-grid.css";
 @import "./two-col-accordion.css";
@@ -8,3 +11,5 @@
 @import "./intelligence.css";
 @import "./cta-bg.css";
 @import "./bridge.css";
+@import "./footer.css";
+@import "./responsive.css";

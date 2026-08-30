@@ -1,0 +1,224 @@
+/* Site-wide responsive overrides */
+
+@media (max-width: 991px) {
+  .talk-fab {
+    display: none;
+  }
+
+  .overlay {
+    padding: calc(var(--chrome, 86px) + 20px) 24px 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 56px 0;
+  }
+
+  .page-hero {
+    padding: 56px 0 48px;
+  }
+
+  .news-section {
+    padding: 56px 0;
+  }
+
+  .trusted-section {
+    padding: 56px 0;
+  }
+
+  .cinema-copy {
+    padding: 40px 20px;
+  }
+
+  .footer {
+    padding: 40px 0 24px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 0 20px 24px;
+  }
+
+  .footer-legal {
+    flex-wrap: wrap;
+    gap: 12px 16px;
+  }
+
+  .footer-divider {
+    margin: 28px 0 16px;
+  }
+
+  .top-bar__inner {
+    padding: 0 44px 0 20px !important;
+  }
+
+  .top-bar .close-icon {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+/* Home hero */
+@media (max-width: 767px) {
+  .home-hero {
+    padding: calc(var(--chrome, 86px) + 16px) 20px 32px;
+  }
+
+  .home-hero__flags {
+    grid-template-columns: 1fr;
+    max-width: none;
+  }
+
+  .home-hero h1 {
+    font-size: clamp(34px, 9vw, 48px);
+  }
+}
+
+@media (max-width: 480px) {
+  .home-hero__actions .button {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Mission tabber */
+@media (max-width: 1199px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+    padding: 48px 0 !important;
+  }
+
+  .hero-title {
+    font-size: clamp(40px, 8vw, 72px) !important;
+    line-height: 1.05 !important;
+    max-width: none !important;
+  }
+
+  .hero-inner {
+    padding: 0 20px !important;
+  }
+
+  .hero {
+    padding: 64px 0 !important;
+  }
+
+  .hero-content-wrapper,
+  .hero-stats-wrapper {
+    min-height: 0 !important;
+    position: relative !important;
+  }
+}
+
+@media (max-width: 767px) {
+  nav.hero-tabs {
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch;
+    scroll-padding-inline: 20px;
+    padding-bottom: 4px;
+  }
+
+  .hero-stats {
+    flex-wrap: wrap !important;
+    gap: 16px !important;
+  }
+
+  .hero-stats .stat {
+    flex: 1 1 calc(50% - 8px) !important;
+    min-width: 0 !important;
+  }
+
+  .hero-stats .stat:last-child:nth-child(odd) {
+    flex-basis: 100%;
+  }
+}
+
+/* Sovereign stack accordion */
+@media (max-width: 991px) {
+  .intelligence-section {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+    padding: 56px 24px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .intelligence-section {
+    padding: 48px 20px !important;
+  }
+
+  .intelligence-section-wrap .accordion-header .accordion-title {
+    padding-right: 36px !important;
+    font-size: 15px !important;
+  }
+
+  .intelligence-section-wrap .accordion-content {
+    padding-left: 0 !important;
+  }
+}
+
+/* Use cases */
+@media (max-width: 900px) {
+  .use-cases-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Solution page */
+@media (max-width: 767px) {
+  .cm-banner-wrap.complete_center .cm-banner-group,
+  .cm-banner-group {
+    min-height: auto !important;
+    padding: 100px 0 48px !important;
+  }
+
+  .cm-banner-group .banner-left h1 {
+    font-size: clamp(32px, 9vw, 48px) !important;
+  }
+
+  .manu-intelligence-section {
+    --card-w: min(100%, 320px) !important;
+    --card-h: auto !important;
+  }
+
+  .manu-intelligence-section .intro-section {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px;
+    margin-bottom: 40px !important;
+  }
+
+  .manu-intelligence-section h2,
+  .manu-intelligence-section .intro-section h2 {
+    font-size: clamp(32px, 9vw, 48px) !important;
+    padding-right: 0 !important;
+  }
+
+  .cascade-arrow.cascade-prev,
+  .cascade-arrow.cascade-next {
+    display: none;
+  }
+}
+
+/* CTA band */
+@media (max-width: 767px) {
+  .full-width-bg h2 {
+    font-size: clamp(28px, 8vw, 40px) !important;
+  }
+
+  .full-width-bg .button-group {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .full-width-bg .button-group .button {
+    width: 100%;
+    text-align: center;
+  }
+}

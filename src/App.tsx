@@ -50,7 +50,8 @@ export default function App() {
   })();
 
   const overHero = location.pathname === "/" || location.pathname.startsWith("/solutions/");
-  const chromePad = overHero ? 0 : announce ? 137 : 86;
+  const chromeHeight = overHero ? (announce ? 137 : 86) : announce ? 137 : 86;
+  const chromePad = overHero ? 0 : chromeHeight;
 
   return (
     <>
@@ -82,8 +83,8 @@ export default function App() {
           }}
         />
       </div>
-      <Overlay open={menuOpen} products={navProducts} onClose={() => setMenuOpen(false)} />
-      <div id="smooth-wrapper" style={{ "--chrome": `${overHero ? (announce ? 137 : 86) : chromePad}px` } as CSSProperties}>
+      <Overlay open={menuOpen} products={navProducts} chromeHeight={chromeHeight} onClose={() => setMenuOpen(false)} />
+      <div id="smooth-wrapper" style={{ "--chrome": `${chromeHeight}px` } as CSSProperties}>
         <div id="smooth-content">
           <main style={{ paddingTop: chromePad }}>{page}</main>
           <Footer />

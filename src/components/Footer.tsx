@@ -6,7 +6,13 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-grid content-wrapper">
         <div className="footer-logo">
-          <img src="/brand/mark.png" alt="AxeOra UAE" width={48} height={48} />
+          <Link to="/" className="footer-brand" aria-label="AxeOra UAE home">
+            <img src="/brand/mark.png" alt="" width={83} height={50} />
+            <span className="footer-brand-copy">
+              <span className="footer-brand-name">AXEORA</span>
+              <span className="footer-brand-sub">UAE</span>
+            </span>
+          </Link>
         </div>
         <div>
           <div className="footer-col-title">Solutions</div>

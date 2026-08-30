@@ -8,7 +8,7 @@ export default function SideNav() {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
-    const hero = document.querySelector(".cm-banner-wrap");
+    const hero = document.querySelector(".home-hero, .cm-banner-wrap");
     const sections = pageSections
       .map((s, i) => ({ el: document.getElementById(s.id), i }))
       .filter((x): x is { el: HTMLElement; i: number } => Boolean(x.el));

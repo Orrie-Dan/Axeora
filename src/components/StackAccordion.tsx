@@ -18,67 +18,6 @@ const PlusIcon = () => (
   </svg>
 );
 
-const StackMark = () => (
-  <svg
-    className="intelligence-img-top"
-    viewBox="0 0 752 438"
-    width={752}
-    height={438}
-    role="img"
-    aria-labelledby="stack-mark-title"
-  >
-    <title id="stack-mark-title">The sovereign stack</title>
-    <rect width="752" height="438" fill="#f4f3ef" />
-    <g stroke="#182d21" strokeWidth="1.4" fill="none">
-      <line x1="48" y1="56" x2="620" y2="72" />
-      <line x1="620" y1="72" x2="708" y2="210" />
-      <line x1="708" y1="210" x2="430" y2="390" />
-      <line x1="430" y1="390" x2="48" y2="56" />
-      <line x1="48" y1="56" x2="708" y2="210" />
-      <line x1="620" y1="72" x2="430" y2="390" />
-    </g>
-    <g fill="#48DE93">
-      <circle cx="48" cy="56" r="7" />
-      <circle cx="620" cy="72" r="7" />
-      <circle cx="708" cy="210" r="7" />
-      <circle cx="430" cy="390" r="7" />
-    </g>
-    <text
-      x="40"
-      y="168"
-      fill="#182d21"
-      fontFamily="Host Grotesk, sans-serif"
-      fontWeight="700"
-      fontSize="92"
-      letterSpacing="-3"
-    >
-      THE
-    </text>
-    <text
-      x="40"
-      y="262"
-      fill="#182d21"
-      fontFamily="Host Grotesk, sans-serif"
-      fontWeight="700"
-      fontSize="92"
-      letterSpacing="-3"
-    >
-      SOVEREIGN
-    </text>
-    <text
-      x="40"
-      y="356"
-      fill="#182d21"
-      fontFamily="Host Grotesk, sans-serif"
-      fontWeight="700"
-      fontSize="92"
-      letterSpacing="-3"
-    >
-      STACK
-    </text>
-  </svg>
-);
-
 export default function StackAccordion() {
   const root = useRef<HTMLElement>(null);
 
@@ -136,10 +75,11 @@ export default function StackAccordion() {
   }, []);
 
   return (
-    <section className="intelligence-section-wrap" id="intelligence" ref={root}>
+    <section className="intelligence-section-wrap" id="manufacturing" ref={root}>
       <div className="intelligence-section">
         <div className="intelligence-left">
-          <StackMark />
+          <p className="capabilities-eyebrow capabilities-eyebrow--dark">The sovereign stack</p>
+          <h2 className="intelligence-left__title">One national platform, five integrated layers</h2>
           <p className="large-text">
             AxeOra assembles AI, sovereign cloud, cybersecurity, and digital public infrastructure
             into one national stack governments can own and operate.
@@ -155,7 +95,7 @@ export default function StackAccordion() {
               <div className="accordion-item" key={s.id}>
                 <button className="accordion-header" type="button" aria-expanded="false">
                   <div className="icon">
-                    <img src={s.icon} alt="" width={128} height={128} />
+                    <img src={s.icon} alt="" />
                   </div>
                   <span className="accordion-title">
                     {s.title}

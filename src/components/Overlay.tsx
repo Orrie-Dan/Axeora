@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, type CSSProperties } from "react";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 
@@ -8,9 +8,10 @@ type Props = {
   open: boolean;
   products: Product[];
   onClose: () => void;
+  chromeHeight?: number;
 };
 
-export default function Overlay({ open, products, onClose }: Props) {
+export default function Overlay({ open, products, onClose, chromeHeight = 86 }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const seenOpen = useRef(false);
 
@@ -49,7 +50,12 @@ export default function Overlay({ open, products, onClose }: Props) {
   }, [open]);
 
   return (
-    <div className={`overlay${open ? " is-open" : ""}`} ref={ref} aria-hidden={!open}>
+    <div
+      className={`overlay${open ? " is-open" : ""}`}
+      ref={ref}
+      aria-hidden={!open}
+      style={{ "--chrome": `${chromeHeight}px` } as CSSProperties}
+    >
       <div className="overlay-grid">
         <div>
           <h3>Solutions</h3>

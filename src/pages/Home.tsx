@@ -1,6 +1,6 @@
 import { useEffect, type MouseEvent } from "react";
 import { Link } from "react-router-dom";
-import ProductCascade from "../components/ProductCascade";
+import HomeHero from "../components/HomeHero";
 import MissionTabs from "../components/MissionTabs";
 import PinnedCases from "../components/PinnedCases";
 import StackAccordion from "../components/StackAccordion";
@@ -64,44 +64,11 @@ export default function Home() {
 
   return (
     <>
-      <div className="cm-banner-wrap complete_center cont-align-center">
-        <div className="cm-banner-group has-banner has-hero-video has-hero-still">
-          <img
-            className="hero-video"
-            src="/hero/sovereign-stack.png"
-            alt=""
-            aria-hidden
-          />
-          <div className="overlay-bg" />
-          <div className="content-wrapper">
-            <div className="banner-content">
-              <div className="banner-left">
-                <div className="hero-banner-lower-text">
-                  <h1 style={{ textAlign: "center" }}>Leading digital nations</h1>
-                  <p style={{ textAlign: "center" }}>
-                    <span style={{ color: "#ffffff" }}>
-                      We build the sovereign AI, cloud, and cyber backbone that enables governments
-                      to move from ambition to real-world impact, at scale.
-                    </span>
-                  </p>
-                </div>
-                <div className="button-group">
-                  <div className="button-item">
-                    <a className="button primary" href="#manufacturing" onClick={goToCapabilities}>
-                      Explore now
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <HomeHero onExplore={goToCapabilities} />
 
-      <ProductCascade />
+      <StackAccordion />
       <MissionTabs />
       <PinnedCases />
-      <StackAccordion />
       <LogoMarquee />
 
       <section className="full-width-bg type1" id="get_started">

@@ -21,7 +21,7 @@ export default function Header({ open, overHero, onToggle }: Props) {
       <div className="content-wrapper">
         <div className="header-left-side">
           <Link to="/" className="brand custom-logo" aria-label="AxeOra UAE home">
-            <img src="/brand/mark.png" alt="" width={48} height={48} />
+            <img src="/brand/mark.png" alt="" width={83} height={50} />
             <span className="brand-copy">
               <span className="brand-name">AXEORA</span>
               <span className="brand-sub">UAE</span>
