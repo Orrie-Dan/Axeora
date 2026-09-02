@@ -45,22 +45,73 @@
   transition: stroke-dashoffset 1.5s ease 0.15s;
 }
 
-.africa-map__node {
+.africa-map__country {
   opacity: 0;
   cursor: pointer;
-  transition: opacity 0.5s ease, r 0.25s ease, filter 0.25s ease;
+  outline: none;
+  transition: opacity 0.45s ease;
 }
 
-.africa-map-wrap.is-visible .africa-map__node {
+.africa-map-wrap.is-visible .africa-map__country {
   opacity: 1;
 }
 
-.africa-map__node.is-active {
+.africa-map__country.is-dimmed {
+  opacity: 0.38;
+}
+
+.africa-map__country.is-dimmed .africa-map__dot {
+  opacity: 0.5;
+}
+
+.africa-map__label {
+  pointer-events: none;
+  user-select: none;
+  transition: fill 0.2s ease;
+}
+
+.africa-map__country.is-active .africa-map__label {
+  font-weight: 700;
+}
+
+.africa-map__country:focus-visible .africa-map__dot {
+  filter: drop-shadow(0 0 6px currentColor);
+  stroke: #fff;
+  stroke-width: 0.35;
+}
+
+.africa-map__dot {
+  transition: r 0.25s ease, filter 0.25s ease;
+}
+
+.africa-map__country.is-active .africa-map__dot {
   filter: drop-shadow(0 0 6px #8fe6ff);
 }
 
-.africa-map-wrap.has-focus .africa-map__node.is-dimmed {
-  opacity: 0.28;
+.africa-map-wrap--hero .africa-map__country.is-active .africa-map__dot {
+  filter: drop-shadow(0 0 6px rgba(72, 222, 147, 0.85));
+}
+
+.africa-map__country:hover:not(.is-dimmed) .africa-map__dot {
+  filter: drop-shadow(0 0 4px rgba(143, 230, 255, 0.6));
+}
+
+.africa-map-wrap--hero .africa-map__country:hover:not(.is-dimmed) .africa-map__dot {
+  filter: drop-shadow(0 0 4px rgba(72, 222, 147, 0.65));
+}
+
+.africa-map__country:hover:not(.is-dimmed) .africa-map__label {
+  fill: #8fe6ff;
+}
+
+.africa-map-wrap--hero .africa-map__country:hover:not(.is-dimmed) .africa-map__label {
+  fill: #48de93;
+}
+
+.africa-map-wrap--hero .africa-map__tooltip {
+  color: #48de93;
+  border-color: rgba(72, 222, 147, 0.35);
+  background: rgba(8, 18, 14, 0.88);
 }
 
 .africa-map__tooltip {
@@ -99,7 +150,7 @@
     transition: none;
   }
 
-  .africa-map__node,
+  .africa-map__country,
   .africa-map__pkt {
     opacity: 1;
     transition: none;

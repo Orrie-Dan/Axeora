@@ -445,12 +445,14 @@ body {
   height: auto;
 }
 
-.intelligence-section-wrap .accordion-header .icon img {
+.intelligence-section-wrap .accordion-header .icon {
+  color: var(--ink);
+}
+
+.intelligence-section-wrap .accordion-header .icon .stack-icon {
+  width: 28px;
+  height: 28px;
   display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border-radius: 4px;
 }
 
 .intelligence-section-wrap .acc-trigger {

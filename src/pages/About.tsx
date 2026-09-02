@@ -37,8 +37,8 @@ export default function About() {
               capabilities.
             </p>
           </div>
-          <div className="cover">
-            <img src="/brand/identity.png" alt="AxeOra UAE brand identity" />
+          <div className="cover cover--identity">
+            <img src="/brand/lockup.png" alt="AxeOra UAE brand identity" />
           </div>
         </div>
       </section>

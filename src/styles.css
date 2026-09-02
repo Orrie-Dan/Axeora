@@ -1075,6 +1075,22 @@ ul {
   min-height: 360px;
 }
 
+.cover--identity {
+  min-height: 0;
+  overflow: visible;
+  background: transparent;
+  display: grid;
+  place-items: center;
+}
+
+.cover--identity img {
+  object-fit: contain;
+  min-height: 0;
+  width: 100%;
+  height: auto;
+  max-height: 440px;
+}
+
 .notfound {
   min-height: 60vh;
   display: grid;

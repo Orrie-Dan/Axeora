@@ -589,6 +589,22 @@ export const africaCountries = [
   "Madagascar",
 ];
 
+/** GeoJSON country names (holtzy world.geojson) for each engagement market */
+export const africaGeoNames: Record<(typeof africaCountries)[number], string[]> = {
+  Senegal: ["Senegal"],
+  "Côte d'Ivoire": ["Ivory Coast", "Côte d'Ivoire"],
+  Ghana: ["Ghana"],
+  Nigeria: ["Nigeria"],
+  Kenya: ["Kenya"],
+  Tanzania: ["Tanzania"],
+  Rwanda: ["Rwanda"],
+  Zambia: ["Zambia"],
+  "South Africa": ["South Africa"],
+  "Burkina Faso": ["Burkina Faso"],
+  Mozambique: ["Mozambique"],
+  Madagascar: ["Madagascar"],
+};
+
 /** Globe node positions (640×640 viewBox) for hero map */
 export const africaGlobeNodes: Array<{
   country: (typeof africaCountries)[number];
@@ -627,20 +643,39 @@ export const africaCountryFlags: Record<(typeof africaCountries)[number], string
   Madagascar: "mg",
 };
 
+/** Label placement on the hero Africa map (viewBox coords) */
+export const africaMapLabels: Record<
+  (typeof africaCountries)[number],
+  { x: number; y: number; anchor: "start" | "middle" | "end"; short?: string }
+> = {
+  Senegal: { x: -1, y: 23.3, anchor: "end" },
+  "Côte d'Ivoire": { x: 16.5, y: 21.5, anchor: "middle" },
+  Ghana: { x: 16, y: 36.5, anchor: "middle" },
+  Nigeria: { x: 25.5, y: 25.5, anchor: "middle" },
+  "Burkina Faso": { x: 20, y: 24.5, anchor: "end", short: "Burkina Faso" },
+  Kenya: { x: 58, y: 39.3, anchor: "start" },
+  Tanzania: { x: 48, y: 37.5, anchor: "middle" },
+  Rwanda: { x: 58, y: 44.2, anchor: "start" },
+  Zambia: { x: 46.3, y: 57, anchor: "middle" },
+  Mozambique: { x: 54, y: 57, anchor: "start" },
+  "South Africa": { x: 48.5, y: 68, anchor: "middle", short: "S. Africa" },
+  Madagascar: { x: 70, y: 54.8, anchor: "start" },
+};
+
 /** SVG node indices on the Africa map for each engagement country */
 export const africaCountryNodes: Record<string, number[]> = {
   Senegal: [0],
-  "Côte d'Ivoire": [1, 2, 3],
+  "Côte d'Ivoire": [1],
   Ghana: [2, 3],
   Nigeria: [4],
-  Kenya: [5, 6],
-  Tanzania: [5, 6],
+  Kenya: [5],
+  Tanzania: [6],
   Rwanda: [7],
   Zambia: [8],
   "South Africa": [9, 11],
-  "Burkina Faso": [1, 2],
+  "Burkina Faso": [12],
   Mozambique: [10],
-  Madagascar: [10],
+  Madagascar: [13],
 };
 
 export const audiences = [
@@ -853,12 +888,246 @@ export const pillars = [
 ];
 
 export const pageSections = [
+  { id: "who", label: "Who we are" },
   { id: "manufacturing", label: "Capabilities" },
   { id: "mission", label: "Mission" },
   { id: "use-case", label: "Use Cases" },
   { id: "trusted", label: "Partners" },
   { id: "get_started", label: "Get Started" },
 ];
+
+export const identity = [
+  {
+    id: "who",
+    kicker: "Who we are",
+    title: "An Emirati technology company",
+    body: "AxeOra UAE specialises in AI, sovereign cloud, cybersecurity, and digital public infrastructure for governments and strategic enterprises.",
+  },
+  {
+    id: "do",
+    kicker: "What we do",
+    title: "National digital infrastructure",
+    body: "We deliver AI-ready data centres, in-country cloud, national cyber programmes, identity and payments rails, and intelligent cities — under PPP and BOT models.",
+  },
+  {
+    id: "stand",
+    kicker: "What we represent",
+    title: "Digitalisation, power, and trade",
+    body: "Technology transfer, industrial delivery, and a UAE–Africa bridge connecting Emirati innovation with national programmes across the continent.",
+  },
+];
+
+export const beliefs = [
+  {
+    id: "sovereignty",
+    number: "01",
+    title: "Sovereignty is infrastructure",
+    body: "Control of data, keys, and operations is not a policy overlay. It is how the platform is designed, hosted, and run.",
+  },
+  {
+    id: "ownership",
+    number: "02",
+    title: "Nations must own what they run",
+    body: "World-class systems only endure when local teams can operate and evolve them. Technology transfer is part of delivery, not an afterthought.",
+  },
+  {
+    id: "security",
+    number: "03",
+    title: "Security belongs in the design",
+    body: "Cyber resilience is built into every layer — identity, cloud, AI, and the city — so protection is the default, not a later programme.",
+  },
+  {
+    id: "partnership",
+    number: "04",
+    title: "Partnership over pilots",
+    body: "National programmes need G2G engagement, PPP and BOT structures, and industrial backing — not one-off proofs of concept.",
+  },
+];
+
+type HeroCard = { kicker: string; title: string; body: string };
+
+export const heroOverview: [HeroCard, HeroCard] = [
+  {
+    kicker: "UAE",
+    title: "Emirati delivery partner",
+    body: "Sovereign AI, cloud, and cyber programmes backed by Mark Cables UAE.",
+  },
+  {
+    kicker: "Africa",
+    title: "12 active nations",
+    body: "Engagements across West, East, and Southern Africa.",
+  },
+];
+
+export const africaHeroCards: Record<(typeof africaCountries)[number], [HeroCard, HeroCard]> = {
+  Senegal: [
+    {
+      kicker: "West Africa",
+      title: "Senegal",
+      body: "A West African digital corridor for government platforms, identity, and inclusive public services.",
+    },
+    {
+      kicker: "Focus",
+      title: "Digital public infrastructure",
+      body: "Identity, authentication, and e-government rails that keep citizen services under national control.",
+    },
+  ],
+  "Côte d'Ivoire": [
+    {
+      kicker: "West Africa",
+      title: "Côte d'Ivoire",
+      body: "A strategic market for sovereign cloud and digital government across francophone West Africa.",
+    },
+    {
+      kicker: "Focus",
+      title: "Sovereign cloud",
+      body: "In-country architecture so ministries retain ownership of data, operations, and critical platforms.",
+    },
+  ],
+  Ghana: [
+    {
+      kicker: "West Africa",
+      title: "Ghana",
+      body: "A digital-government partner market spanning public services, payments, and urban systems.",
+    },
+    {
+      kicker: "Focus",
+      title: "Digital government",
+      body: "Citizen services and payment rails designed for inclusion, transparency, and local operation.",
+    },
+  ],
+  Nigeria: [
+    {
+      kicker: "West Africa",
+      title: "Nigeria",
+      body: "Population-scale digital infrastructure — identity, payments, and national platforms at continental weight.",
+    },
+    {
+      kicker: "Focus",
+      title: "Identity and payments",
+      body: "DPI ecosystems that bring more people into the formal economy without surrendering sovereignty.",
+    },
+  ],
+  Kenya: [
+    {
+      kicker: "East Africa",
+      title: "Kenya",
+      body: "An East African hub for intelligent cities, mobility, and government digital platforms.",
+    },
+    {
+      kicker: "Focus",
+      title: "Smart cities",
+      body: "Computer vision, traffic, and urban command centres that give operators one live picture of the city.",
+    },
+  ],
+  Tanzania: [
+    {
+      kicker: "East Africa",
+      title: "Tanzania",
+      body: "National digital programmes spanning public services, connectivity, and sovereign hosting.",
+    },
+    {
+      kicker: "Focus",
+      title: "Sovereign hosting",
+      body: "In-country cloud and data platforms so government workloads remain under national control.",
+    },
+  ],
+  Rwanda: [
+    {
+      kicker: "East Africa",
+      title: "Rwanda",
+      body: "A digital-government leader where identity, services, and urban systems can be delivered as one stack.",
+    },
+    {
+      kicker: "Focus",
+      title: "Digital public services",
+      body: "National identity, e-government, and trusted authentication designed for citizen-centric delivery.",
+    },
+  ],
+  Zambia: [
+    {
+      kicker: "Southern Africa",
+      title: "Zambia",
+      body: "A southern corridor for energy-aware compute, sovereign cloud, and government modernisation.",
+    },
+    {
+      kicker: "Focus",
+      title: "Energy and compute",
+      body: "Purpose-built facilities and industrial delivery for national AI and cloud workloads.",
+    },
+  ],
+  "South Africa": [
+    {
+      kicker: "Southern Africa",
+      title: "South Africa",
+      body: "A regional anchor for cyber resilience, sovereign cloud, and enterprise-grade national platforms.",
+    },
+    {
+      kicker: "Focus",
+      title: "Cyber and cloud",
+      body: "SOCs, zero trust, and in-country cloud for government systems and critical infrastructure.",
+    },
+  ],
+  "Burkina Faso": [
+    {
+      kicker: "West Africa",
+      title: "Burkina Faso",
+      body: "Digital public infrastructure and secure government platforms for inclusive national services.",
+    },
+    {
+      kicker: "Focus",
+      title: "Public services",
+      body: "Identity and e-government delivered with technology transfer so local teams can operate the stack.",
+    },
+  ],
+  Mozambique: [
+    {
+      kicker: "Southern Africa",
+      title: "Mozambique",
+      body: "A southern digital corridor for sovereign hosting, connectivity, and government modernisation.",
+    },
+    {
+      kicker: "Focus",
+      title: "National platforms",
+      body: "Cloud, identity, and secure government systems structured for PPP and BOT delivery.",
+    },
+  ],
+  Madagascar: [
+    {
+      kicker: "Indian Ocean",
+      title: "Madagascar",
+      body: "Island-nation digital infrastructure with a focus on sovereignty, inclusion, and local capability.",
+    },
+    {
+      kicker: "Focus",
+      title: "Digital inclusion",
+      body: "Public-service rails and sovereign hosting designed to be owned and operated in-country.",
+    },
+  ],
+};
+
+const engagementPhotos: Partial<Record<(typeof africaCountries)[number], string>> = {
+  Senegal: photos.conf,
+  Ghana: photos.conf,
+  Nigeria: photos.dpi,
+  Kenya: photos.nairobi,
+  Tanzania: photos.nairobi,
+  Rwanda: photos.nairobi,
+  Zambia: photos.cape,
+  "South Africa": photos.cape,
+  Mozambique: photos.cape,
+  Madagascar: photos.cape,
+};
+
+export const landingEngagements = africaCountries.map((country) => {
+  const cards = africaHeroCards[country];
+  return {
+    country,
+    name: cards[0].title,
+    subtitle: `${cards[0].kicker} · ${cards[1].title}`,
+    image: engagementPhotos[country] ?? photos.nairobi,
+  };
+});
 
 export const partners = [
   "Mark Cables UAE",

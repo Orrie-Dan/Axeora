@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { stack } from "../data";
+import { stackIcons } from "./icons/CapabilityIcons";
 
 const PlusIcon = () => (
   <svg className="open" width="24" height="23" viewBox="0 0 24 23" fill="none" aria-hidden>
@@ -78,8 +79,8 @@ export default function StackAccordion() {
     <section className="intelligence-section-wrap" id="manufacturing" ref={root}>
       <div className="intelligence-section">
         <div className="intelligence-left">
-          <p className="capabilities-eyebrow capabilities-eyebrow--dark">The sovereign stack</p>
-          <h2 className="intelligence-left__title">One national platform, five integrated layers</h2>
+          <p className="capabilities-eyebrow capabilities-eyebrow--dark">Capabilities</p>
+          <h2 className="intelligence-left__title">What we do — one national platform, five integrated layers</h2>
           <p className="large-text">
             AxeOra assembles AI, sovereign cloud, cybersecurity, and digital public infrastructure
             into one national stack governments can own and operate.
@@ -91,11 +92,13 @@ export default function StackAccordion() {
         </div>
         <div className="intelligence-right">
           <div className="accordion-wrapper">
-            {stack.map((s) => (
+            {stack.map((s) => {
+              const Icon = stackIcons[s.id as keyof typeof stackIcons];
+              return (
               <div className="accordion-item" key={s.id}>
                 <button className="accordion-header" type="button" aria-expanded="false">
                   <div className="icon">
-                    <img src={s.icon} alt="" />
+                    {Icon ? <Icon className="stack-icon" /> : null}
                   </div>
                   <span className="accordion-title">
                     {s.title}
@@ -108,7 +111,8 @@ export default function StackAccordion() {
                   <p>{s.body}</p>
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>

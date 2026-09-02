@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { africaCountries } from "../data";
-import AfricaMap from "./AfricaMap";
+import AfricaGeoMap from "./AfricaGeoMap";
 
 type Props = {
   compact?: boolean;
@@ -25,7 +25,14 @@ export default function AfricaBridge({ compact = false }: Props) {
           <ul className="africa-bridge__countries" data-aos="fade-up">
             {africaCountries.map((c) => (
               <li key={c} className={active === c ? "is-active" : ""}>
-                <button type="button" onMouseEnter={() => setActive(c)} onMouseLeave={() => setActive(null)} onFocus={() => setActive(c)} onBlur={() => setActive(null)}>
+                <button
+                  type="button"
+                  onMouseEnter={() => setActive(c)}
+                  onMouseLeave={() => setActive(null)}
+                  onFocus={() => setActive(c)}
+                  onBlur={() => setActive(null)}
+                  onClick={() => setActive((prev) => (prev === c ? null : c))}
+                >
                   {c}
                 </button>
               </li>
@@ -37,7 +44,7 @@ export default function AfricaBridge({ compact = false }: Props) {
             </Link>
           ) : null}
         </div>
-        <AfricaMap activeCountry={active} onSelect={setActive} />
+        <AfricaGeoMap tone="bridge" activeCountry={active} onHighlight={setActive} onSelect={setActive} showCountryPills />
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 import { useEffect, type MouseEvent } from "react";
 import { Link } from "react-router-dom";
 import HomeHero from "../components/HomeHero";
+import IdentitySection from "../components/IdentitySection";
 import MissionTabs from "../components/MissionTabs";
 import PinnedCases from "../components/PinnedCases";
 import StackAccordion from "../components/StackAccordion";
@@ -15,9 +16,9 @@ export default function Home() {
       const { ScrollTrigger } = await import("gsap/ScrollTrigger");
       if (killed) return;
       gsap.registerPlugin(ScrollTrigger);
-      const bg = document.querySelector(".mission_tabber_section .hero-bg");
       const started = document.getElementById("get_started");
       ctx = gsap.context(() => {
+        const bg = document.querySelector(".mission_tabber_section .hero-bg");
         if (bg) {
           gsap.to(bg, {
             yPercent: 18,
@@ -65,7 +66,7 @@ export default function Home() {
   return (
     <>
       <HomeHero onExplore={goToCapabilities} />
-
+      <IdentitySection />
       <StackAccordion />
       <MissionTabs />
       <PinnedCases />

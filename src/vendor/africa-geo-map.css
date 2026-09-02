@@ -1,0 +1,204 @@
+/* GeoJSON Africa map — Solaris-style engagement highlighting */
+.africa-geo-map {
+  position: relative;
+  width: 100%;
+}
+
+.africa-geo-map__frame {
+  border-radius: 8px;
+  border: 1px solid rgba(197, 160, 89, 0.22);
+  background: linear-gradient(180deg, rgba(10, 26, 20, 0.92) 0%, rgba(8, 15, 13, 0.98) 100%);
+  padding: 8px;
+  overflow: hidden;
+}
+
+.africa-geo-map--hero .africa-geo-map__frame {
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
+  overflow: visible;
+}
+
+.africa-geo-map--cinematic {
+  height: 100%;
+  width: 100%;
+}
+
+.africa-geo-map--cinematic .africa-geo-map__frame {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.africa-geo-map--cinematic .africa-geo-map__svg {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+}
+
+.africa-geo-map--cinematic .africa-geo-map__fallback {
+  min-height: 100%;
+}
+
+.africa-geo-map--bridge .africa-geo-map__frame {
+  border-color: rgba(75, 146, 218, 0.35);
+  background: linear-gradient(180deg, rgba(9, 20, 38, 0.96) 0%, rgba(6, 15, 34, 1) 100%);
+}
+
+.africa-geo-map__svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.africa-geo-map__country {
+  fill: rgba(255, 255, 255, 0.08);
+  stroke: rgba(255, 255, 255, 0.1);
+  stroke-width: 0.55;
+  transition:
+    fill 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    stroke 0.35s ease,
+    opacity 0.35s ease,
+    filter 0.35s ease;
+}
+
+.africa-geo-map--hero .africa-geo-map__country.is-engaged {
+  fill: rgba(197, 160, 89, 0.34);
+  stroke: rgba(197, 160, 89, 0.5);
+  animation: africa-map-engaged-pulse 3.2s ease-in-out infinite;
+}
+
+@keyframes africa-map-engaged-pulse {
+  0%,
+  100% {
+    fill: rgba(197, 160, 89, 0.28);
+  }
+  50% {
+    fill: rgba(197, 160, 89, 0.46);
+  }
+}
+
+.africa-geo-map--bridge .africa-geo-map__country.is-engaged {
+  fill: rgba(75, 146, 218, 0.42);
+  stroke: rgba(75, 146, 218, 0.62);
+}
+
+.africa-geo-map__country.is-engaged {
+  cursor: pointer;
+  outline: none;
+}
+
+.africa-geo-map--hero .africa-geo-map__country.is-active {
+  fill: #48de93;
+  stroke: rgba(197, 160, 89, 0.95);
+  filter: drop-shadow(0 0 12px rgba(72, 222, 147, 0.55));
+  animation: none;
+}
+
+.africa-geo-map--hero .africa-geo-map__country.is-engaged:hover:not(.is-dimmed),
+.africa-geo-map--hero .africa-geo-map__country.is-engaged:focus-visible {
+  fill: rgba(72, 222, 147, 0.82);
+  stroke: rgba(197, 160, 89, 0.9);
+  filter: drop-shadow(0 0 10px rgba(72, 222, 147, 0.4));
+  animation: none;
+  transform-origin: center;
+}
+
+.africa-geo-map--bridge .africa-geo-map__country.is-active {
+  fill: #31bdf2;
+  stroke: rgba(143, 230, 255, 0.95);
+  filter: drop-shadow(0 0 8px rgba(49, 189, 242, 0.45));
+}
+
+.africa-geo-map--bridge .africa-geo-map__country.is-engaged:hover:not(.is-dimmed),
+.africa-geo-map--bridge .africa-geo-map__country.is-engaged:focus-visible {
+  fill: rgba(49, 189, 242, 0.78);
+  stroke: rgba(143, 230, 255, 0.85);
+}
+
+.africa-geo-map__country.is-dimmed {
+  opacity: 0.42;
+}
+
+.africa-geo-map__fallback {
+  min-height: 360px;
+  display: grid;
+  place-items: center;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.africa-geo-map__active-label {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #48de93;
+  padding: 6px 12px;
+  border: 1px solid rgba(72, 222, 147, 0.35);
+  border-radius: 4px;
+  background: rgba(8, 18, 14, 0.88);
+  backdrop-filter: blur(6px);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.africa-geo-map--hero .africa-geo-map__active-label {
+  display: none;
+}
+
+.africa-geo-map__pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.africa-geo-map__pill {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.72);
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+}
+
+.africa-geo-map__pill:hover,
+.africa-geo-map__pill:focus-visible,
+.africa-geo-map__pill.is-active {
+  border-color: rgba(72, 222, 147, 0.55);
+  background: rgba(72, 222, 147, 0.12);
+  color: #fff;
+  outline: none;
+}
+
+.africa-geo-map--bridge .africa-geo-map__pill:hover,
+.africa-geo-map--bridge .africa-geo-map__pill:focus-visible,
+.africa-geo-map--bridge .africa-geo-map__pill.is-active {
+  border-color: rgba(49, 189, 242, 0.55);
+  background: rgba(49, 189, 242, 0.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .africa-geo-map__country {
+    transition: none;
+  }
+
+  .africa-geo-map--hero .africa-geo-map__country.is-engaged {
+    animation: none;
+    fill: rgba(197, 160, 89, 0.38);
+  }
+}

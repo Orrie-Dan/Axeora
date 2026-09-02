@@ -20,7 +20,10 @@ export default function SmoothScroll() {
       touchMultiplier: 1.1,
     });
 
-    lenis.on("scroll", ScrollTrigger.update);
+    lenis.on("scroll", () => {
+      ScrollTrigger.update();
+      AOS.refresh();
+    });
     const ticker = (time: number) => {
       lenis.raf(time * 1000);
     };
