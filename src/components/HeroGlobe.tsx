@@ -38,7 +38,7 @@ export default function HeroGlobe({ active = null, onSelect }: Props) {
         className="hero-globe__svg"
         viewBox="0 0 640 640"
         role="img"
-        aria-label="Map showing digital corridors from the UAE to twelve African nations"
+        aria-label="Map showing digital corridors from the UAE to African engagement nations"
       >
         <defs>
           <clipPath id={`globe-clip-${uid}`}>

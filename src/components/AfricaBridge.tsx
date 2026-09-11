@@ -44,7 +44,7 @@ export default function AfricaBridge({ compact = false }: Props) {
             </Link>
           ) : null}
         </div>
-        <AfricaGeoMap tone="bridge" activeCountry={active} onHighlight={setActive} onSelect={setActive} showCountryPills />
+        <AfricaGeoMap tone="bridge" activeCountry={active} onHighlight={setActive} onSelect={setActive} />
       </div>
     </section>
   );

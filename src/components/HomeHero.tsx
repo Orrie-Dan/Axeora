@@ -62,7 +62,7 @@ export default function HomeHero({ onExplore }: Props) {
           <p className="home-hero__kicker">UAE–Africa digital corridor</p>
           <h1>Leading digital nations</h1>
           <p className="home-hero__lede">
-            Sovereign AI, cloud, and cyber infrastructure for governments across twelve African nations.
+            Sovereign AI, cloud, and cyber infrastructure for governments across fourteen African nations.
           </p>
           <div className="home-hero__actions">
             <a className="button primary" href="#manufacturing" onClick={onExplore}>

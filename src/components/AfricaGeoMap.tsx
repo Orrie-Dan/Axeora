@@ -194,7 +194,7 @@ export default function AfricaGeoMap({
             viewBox={`0 0 ${mapWidth} ${mapHeight}`}
             preserveAspectRatio="xMidYMid meet"
             role="img"
-            aria-label="Map of Africa showing twelve AxeOra engagement countries"
+            aria-label="Map of Africa showing AxeOra engagement countries"
           >
             {geographies.map((feature) => {
               const geoName = feature.properties?.name ?? "";

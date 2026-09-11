@@ -238,7 +238,7 @@ export default function AfricaMap({
 
         role="img"
 
-        aria-label="Map showing digital corridors from the UAE to twelve African countries"
+        aria-label="Map showing digital corridors from the UAE to African engagement countries"
 
       >
 

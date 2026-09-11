@@ -20,10 +20,10 @@ export default function Africa() {
       <section className="section">
         <div className="wrap prose">
           <p>
-            With active engagements spanning Senegal, Côte d’Ivoire, Ghana, Nigeria, Kenya,
-            Tanzania, Rwanda, Zambia, South Africa, Burkina Faso, Mozambique, and Madagascar,
-            AxeOra brings Emirati technology, delivery models, and partnerships to national
-            digital programs across the continent.
+            With active engagements spanning Senegal, Gambia, Côte d’Ivoire, Ghana, Nigeria,
+            Burkina Faso, Kenya, Tanzania, Rwanda, Zambia, Botswana, Mozambique, South Africa,
+            and Madagascar, AxeOra brings Emirati technology, delivery models, and partnerships
+            to national digital programs across the continent.
           </p>
           <p>
             Programs are structured for governments: PPP and Build-Operate-Transfer delivery,

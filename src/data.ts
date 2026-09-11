@@ -487,7 +487,7 @@ export const productPages: Record<
         id: "afr",
         kind: "Audience",
         title: "UAE–Africa partners",
-        card: "DPI programmes delivered with technology transfer across twelve African nations.",
+        card: "DPI programmes delivered with technology transfer across fourteen African nations.",
         image: photos.nairobi,
       },
     ],
@@ -576,32 +576,36 @@ export const strengths = [
 
 export const africaCountries = [
   "Senegal",
+  "Gambia",
   "Côte d'Ivoire",
   "Ghana",
   "Nigeria",
+  "Burkina Faso",
   "Kenya",
   "Tanzania",
   "Rwanda",
   "Zambia",
-  "South Africa",
-  "Burkina Faso",
+  "Botswana",
   "Mozambique",
+  "South Africa",
   "Madagascar",
 ];
 
 /** GeoJSON country names (holtzy world.geojson) for each engagement market */
 export const africaGeoNames: Record<(typeof africaCountries)[number], string[]> = {
   Senegal: ["Senegal"],
+  Gambia: ["Gambia", "The Gambia"],
   "Côte d'Ivoire": ["Ivory Coast", "Côte d'Ivoire"],
   Ghana: ["Ghana"],
   Nigeria: ["Nigeria"],
+  "Burkina Faso": ["Burkina Faso"],
   Kenya: ["Kenya"],
   Tanzania: ["Tanzania"],
   Rwanda: ["Rwanda"],
   Zambia: ["Zambia"],
-  "South Africa": ["South Africa"],
-  "Burkina Faso": ["Burkina Faso"],
+  Botswana: ["Botswana"],
   Mozambique: ["Mozambique"],
+  "South Africa": ["South Africa"],
   Madagascar: ["Madagascar"],
 };
 
@@ -614,32 +618,36 @@ export const africaGlobeNodes: Array<{
   ly: number;
 }> = [
   { country: "Senegal", x: 200, y: 242, lx: 72, ly: 232 },
+  { country: "Gambia", x: 210, y: 248, lx: 72, ly: 242 },
   { country: "Côte d'Ivoire", x: 265, y: 252, lx: 72, ly: 252 },
   { country: "Ghana", x: 271, y: 279, lx: 72, ly: 279 },
   { country: "Nigeria", x: 301, y: 265, lx: 72, ly: 305 },
+  { country: "Burkina Faso", x: 252, y: 278, lx: 72, ly: 268 },
   { country: "Kenya", x: 420, y: 307, lx: 548, ly: 298 },
   { country: "Tanzania", x: 393, y: 310, lx: 548, ly: 318 },
   { country: "Rwanda", x: 415, y: 327, lx: 548, ly: 338 },
   { country: "Zambia", x: 385, y: 364, lx: 548, ly: 362 },
-  { country: "South Africa", x: 385, y: 406, lx: 220, ly: 492 },
-  { country: "Burkina Faso", x: 252, y: 278, lx: 72, ly: 268 },
+  { country: "Botswana", x: 378, y: 388, lx: 220, ly: 420 },
   { country: "Mozambique", x: 417, y: 383, lx: 548, ly: 388 },
+  { country: "South Africa", x: 385, y: 406, lx: 220, ly: 492 },
   { country: "Madagascar", x: 463, y: 378, lx: 548, ly: 418 },
 ];
 
 /** ISO 3166-1 alpha-2 codes for flag images */
 export const africaCountryFlags: Record<(typeof africaCountries)[number], string> = {
   Senegal: "sn",
+  Gambia: "gm",
   "Côte d'Ivoire": "ci",
   Ghana: "gh",
   Nigeria: "ng",
+  "Burkina Faso": "bf",
   Kenya: "ke",
   Tanzania: "tz",
   Rwanda: "rw",
   Zambia: "zm",
-  "South Africa": "za",
-  "Burkina Faso": "bf",
+  Botswana: "bw",
   Mozambique: "mz",
+  "South Africa": "za",
   Madagascar: "mg",
 };
 
@@ -649,6 +657,7 @@ export const africaMapLabels: Record<
   { x: number; y: number; anchor: "start" | "middle" | "end"; short?: string }
 > = {
   Senegal: { x: -1, y: 23.3, anchor: "end" },
+  Gambia: { x: 2, y: 26.2, anchor: "end" },
   "Côte d'Ivoire": { x: 16.5, y: 21.5, anchor: "middle" },
   Ghana: { x: 16, y: 36.5, anchor: "middle" },
   Nigeria: { x: 25.5, y: 25.5, anchor: "middle" },
@@ -657,6 +666,7 @@ export const africaMapLabels: Record<
   Tanzania: { x: 48, y: 37.5, anchor: "middle" },
   Rwanda: { x: 58, y: 44.2, anchor: "start" },
   Zambia: { x: 46.3, y: 57, anchor: "middle" },
+  Botswana: { x: 42, y: 62, anchor: "middle" },
   Mozambique: { x: 54, y: 57, anchor: "start" },
   "South Africa": { x: 48.5, y: 68, anchor: "middle", short: "S. Africa" },
   Madagascar: { x: 70, y: 54.8, anchor: "start" },
@@ -665,6 +675,7 @@ export const africaMapLabels: Record<
 /** SVG node indices on the Africa map for each engagement country */
 export const africaCountryNodes: Record<string, number[]> = {
   Senegal: [0],
+  Gambia: [0],
   "Côte d'Ivoire": [1],
   Ghana: [2, 3],
   Nigeria: [4],
@@ -672,6 +683,7 @@ export const africaCountryNodes: Record<string, number[]> = {
   Tanzania: [6],
   Rwanda: [7],
   Zambia: [8],
+  Botswana: [9],
   "South Africa": [9, 11],
   "Burkina Faso": [12],
   Mozambique: [10],
@@ -731,7 +743,7 @@ export const audiences = [
     id: "africa",
     label: "UAE–Africa Partners",
     title: "A strategic bridge from UAE innovation to African ambition",
-    body: "With active engagements spanning twelve African nations, AxeOra acts as a strategic bridge connecting UAE innovation, investment, and expertise with Africa’s digital transformation ambitions — backed by Mark Cables UAE for industrial capability and project delivery.",
+    body: "With active engagements spanning fourteen African nations, AxeOra acts as a strategic bridge connecting UAE innovation, investment, and expertise with Africa’s digital transformation ambitions — backed by Mark Cables UAE for industrial capability and project delivery.",
     points: [
       {
         title: "UAE–Africa digital bridge",
@@ -778,7 +790,7 @@ export const audiences = [
 ];
 
 export const stats = [
-  { value: "12", label: "African nations with active engagements" },
+  { value: "14", label: "African nations with active engagements" },
   { value: "5", label: "National-scale capability domains" },
   { value: "PPP", label: "And BOT delivery for sovereign programs" },
   { value: "UAE", label: "Emirati technology partner for digital nations" },
@@ -954,7 +966,7 @@ export const heroOverview: [HeroCard, HeroCard] = [
   },
   {
     kicker: "Africa",
-    title: "12 active nations",
+    title: "14 active nations",
     body: "Engagements across West, East, and Southern Africa.",
   },
 ];
@@ -970,6 +982,18 @@ export const africaHeroCards: Record<(typeof africaCountries)[number], [HeroCard
       kicker: "Focus",
       title: "Digital public infrastructure",
       body: "Identity, authentication, and e-government rails that keep citizen services under national control.",
+    },
+  ],
+  Gambia: [
+    {
+      kicker: "West Africa",
+      title: "Gambia",
+      body: "A compact West African market for inclusive digital government, identity, and public-service delivery.",
+    },
+    {
+      kicker: "Focus",
+      title: "Inclusive public services",
+      body: "National identity and e-government rails designed for local ownership and citizen access.",
     },
   ],
   "Côte d'Ivoire": [
@@ -1056,6 +1080,18 @@ export const africaHeroCards: Record<(typeof africaCountries)[number], [HeroCard
       body: "Purpose-built facilities and industrial delivery for national AI and cloud workloads.",
     },
   ],
+  Botswana: [
+    {
+      kicker: "Southern Africa",
+      title: "Botswana",
+      body: "A southern African partner for sovereign cloud, secure government platforms, and digital modernisation.",
+    },
+    {
+      kicker: "Focus",
+      title: "Sovereign platforms",
+      body: "In-country cloud and government systems structured for long-term national control.",
+    },
+  ],
   "South Africa": [
     {
       kicker: "Southern Africa",
@@ -1108,12 +1144,14 @@ export const africaHeroCards: Record<(typeof africaCountries)[number], [HeroCard
 
 const engagementPhotos: Partial<Record<(typeof africaCountries)[number], string>> = {
   Senegal: photos.conf,
+  Gambia: photos.conf,
   Ghana: photos.conf,
   Nigeria: photos.dpi,
   Kenya: photos.nairobi,
   Tanzania: photos.nairobi,
   Rwanda: photos.nairobi,
   Zambia: photos.cape,
+  Botswana: photos.cape,
   "South Africa": photos.cape,
   Mozambique: photos.cape,
   Madagascar: photos.cape,
