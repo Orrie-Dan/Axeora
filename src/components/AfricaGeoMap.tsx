@@ -2,8 +2,7 @@ import { geoMercator, geoPath, type GeoPermissibleObjects } from "d3-geo";
 import { useEffect, useMemo, useState } from "react";
 import { africaCountries, africaGeoNames } from "../data";
 
-const WORLD_GEOJSON_URL =
-  "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson";
+const WORLD_GEOJSON_URL = "/maps/africa.geojson";
 const MAP_SIZES = {
   default: { width: 640, height: 720 },
   cinematic: { width: 1100, height: 620 },
@@ -44,6 +43,8 @@ const AFRICA_COUNTRY_NAMES = new Set(
     "Côte d'Ivoire",
     "Ivory Coast",
     "Dem. Rep. Congo",
+    "Democratic Republic of the Congo",
+    "Republic of the Congo",
     "Djibouti",
     "Egypt",
     "Equatorial Guinea",
@@ -76,12 +77,14 @@ const AFRICA_COUNTRY_NAMES = new Set(
     "South Sudan",
     "Sudan",
     "Tanzania",
+    "United Republic of Tanzania",
     "Togo",
     "Tunisia",
     "Uganda",
     "Zambia",
     "Zimbabwe",
     "W. Sahara",
+    "Western Sahara",
     "Somaliland",
     "Cabo Verde",
     "São Tomé and Principe",
@@ -142,6 +145,7 @@ export default function AfricaGeoMap({
     async function loadMap() {
       try {
         const response = await fetch(WORLD_GEOJSON_URL);
+        if (!response.ok) throw new Error(`Map request failed (${response.status})`);
         const data = (await response.json()) as GeoJSON.FeatureCollection;
         if (mounted) {
           const features = (data.features ?? []) as GeoFeature[];

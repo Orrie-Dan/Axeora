@@ -600,7 +600,7 @@ export const africaGeoNames: Record<(typeof africaCountries)[number], string[]> 
   Nigeria: ["Nigeria"],
   "Burkina Faso": ["Burkina Faso"],
   Kenya: ["Kenya"],
-  Tanzania: ["Tanzania"],
+  Tanzania: ["Tanzania", "United Republic of Tanzania"],
   Rwanda: ["Rwanda"],
   Zambia: ["Zambia"],
   Botswana: ["Botswana"],
@@ -1168,16 +1168,13 @@ export const landingEngagements = africaCountries.map((country) => {
 });
 
 export const partners = [
-  "Mark Cables UAE",
-  "PPP Delivery",
-  "BOT Frameworks",
-  "Sovereign Cloud",
-  "National SOC",
-  "Digital Identity",
-  "Smart Cities",
-  "UAE–Africa Bridge",
-  "Cyber Fusion",
-  "LLM Enablement",
+  "Tech5",
+  "UXE",
+  "Parkin",
+  "National Pulse",
+  "Dell",
+  "Microsoft",
+  "Cisco",
 ];
 
 export const heroVideo =

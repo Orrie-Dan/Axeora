@@ -3,7 +3,7 @@
   position: relative;
   height: 100svh;
   min-height: 520px;
-  background: #000;
+  background: #101816;
   color: #fff;
   overflow: hidden;
 }
@@ -35,8 +35,8 @@
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.2) 22%, transparent 42%, transparent 58%, rgba(0, 0, 0, 0.55) 78%, rgba(0, 0, 0, 0.92) 100%),
-    linear-gradient(to right, rgba(0, 0, 0, 0.72) 0%, transparent 16%, transparent 84%, rgba(0, 0, 0, 0.72) 100%);
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.12) 18%, transparent 36%, transparent 64%, rgba(0, 0, 0, 0.42) 82%, rgba(0, 0, 0, 0.88) 100%),
+    linear-gradient(to right, rgba(0, 0, 0, 0.48) 0%, transparent 14%, transparent 86%, rgba(0, 0, 0, 0.48) 100%);
 }
 
 @keyframes hero-glow-breathe {
@@ -328,8 +328,8 @@
 
   .home-hero__vignette {
     background:
-      linear-gradient(to bottom, rgba(0, 0, 0, 0.55) 0%, transparent 18%, transparent 82%, rgba(0, 0, 0, 0.65) 100%),
-      linear-gradient(to right, rgba(0, 0, 0, 0.35) 0%, transparent 8%, transparent 92%, rgba(0, 0, 0, 0.35) 100%);
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, transparent 14%, transparent 86%, rgba(0, 0, 0, 0.5) 100%),
+      linear-gradient(to right, rgba(0, 0, 0, 0.22) 0%, transparent 8%, transparent 92%, rgba(0, 0, 0, 0.22) 100%);
   }
 
   .home-hero__stage {
