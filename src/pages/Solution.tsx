@@ -59,7 +59,7 @@ export default function Solution({ slug }: { slug: string }) {
                 <div className="button-group">
                   <div className="button-item">
                     <a className="button primary" href="#capabilities" onClick={(e) => scrollToId("capabilities", e)}>
-                      Explore {product.cardTitle}
+                      Explore
                     </a>
                   </div>
                   <div className="button-item">

@@ -206,7 +206,8 @@ a.button.Secondary:hover {
   background: linear-gradient(180deg, rgba(8, 16, 12, 0.62) 0%, rgba(8, 16, 12, 0) 100%);
 }
 
-.header.header--over-hero.is-open {
+.header.header--over-hero.is-open,
+.header.header--over-hero.header--scrolled {
   background: #182d21;
 }
 

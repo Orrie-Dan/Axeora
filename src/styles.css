@@ -832,7 +832,7 @@ ul {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.4fr repeat(4, 1fr);
+  grid-template-columns: 1.4fr repeat(3, 1fr);
   gap: 32px;
 }
 
@@ -1118,6 +1118,10 @@ ul {
     grid-column: 1 / -1;
   }
 
+  .footer-col--delivery {
+    grid-column: 1 / -1;
+  }
+
   .overlay-grid {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -1141,7 +1145,6 @@ ul {
   .products,
   .stats,
   .pillars,
-  .footer-grid,
   .audience-grid,
   .overlay-grid,
   .split,

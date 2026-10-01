@@ -76,6 +76,13 @@
   display: flex;
   justify-content:center;
   margin-top: 20px;
+  gap: 12px;
+}
+
+.cm-banner-group .button-group .button {
+  padding: 10px 22px;
+  font-size: 13px;
+  line-height: 15px;
 }
 .cm-banner-group .content-wrapper {
   width: 100%;

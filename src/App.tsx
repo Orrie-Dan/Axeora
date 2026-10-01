@@ -15,20 +15,32 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
 
+type LenisLike = {
+  stop: () => void;
+  start: () => void;
+  scroll: number;
+  on: (event: "scroll", handler: () => void) => () => void;
+  off: (event: "scroll", handler: () => void) => void;
+};
+
 export default function App() {
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
   const [announce, setAnnounce] = useState(true);
   const [sales, setSales] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  const overHero = location.pathname === "/" || location.pathname.startsWith("/solutions/");
 
   useEffect(() => {
     setMenuOpen(false);
     setSales(false);
+    setScrolled(false);
   }, [location.pathname]);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen || sales ? "hidden" : "";
-    const lenis = (window as Window & { __lenis?: { stop: () => void; start: () => void } }).__lenis;
+    const lenis = (window as Window & { __lenis?: LenisLike }).__lenis;
     if (menuOpen || sales) lenis?.stop();
     else lenis?.start();
     return () => {
@@ -36,6 +48,44 @@ export default function App() {
       lenis?.start();
     };
   }, [menuOpen, sales]);
+
+  useEffect(() => {
+    if (!overHero) {
+      setScrolled(false);
+      return;
+    }
+
+    const threshold = 64;
+    const update = () => {
+      const lenis = (window as Window & { __lenis?: LenisLike }).__lenis;
+      const y = lenis?.scroll ?? window.scrollY ?? 0;
+      setScrolled(y > threshold);
+    };
+
+    let unsubscribe: (() => void) | undefined;
+    const bind = () => {
+      const lenis = (window as Window & { __lenis?: LenisLike }).__lenis;
+      if (!lenis || unsubscribe) return Boolean(lenis);
+      unsubscribe = lenis.on("scroll", update);
+      update();
+      return true;
+    };
+
+    bind();
+    window.addEventListener("scroll", update, { passive: true });
+    const retry = window.setInterval(() => {
+      if (bind()) window.clearInterval(retry);
+    }, 50);
+    // Catch programmatic / immediate Lenis jumps that may skip the scroll event.
+    const sync = window.setInterval(update, 250);
+
+    return () => {
+      window.clearInterval(retry);
+      window.clearInterval(sync);
+      unsubscribe?.();
+      window.removeEventListener("scroll", update);
+    };
+  }, [overHero, location.pathname]);
 
   const page = (() => {
     if (location.pathname === "/") return <Home />;
@@ -49,7 +99,6 @@ export default function App() {
     return <NotFound />;
   })();
 
-  const overHero = location.pathname === "/" || location.pathname.startsWith("/solutions/");
   const chromeHeight = overHero ? (announce ? 137 : 86) : announce ? 137 : 86;
   const chromePad = overHero ? 0 : chromeHeight;
 
@@ -77,6 +126,7 @@ export default function App() {
         <Header
           open={menuOpen}
           overHero={overHero}
+          scrolled={overHero && scrolled}
           onToggle={() => {
             setSales(false);
             setMenuOpen((v) => !v);

@@ -4,6 +4,7 @@ import { navProducts } from "../data";
 type Props = {
   open: boolean;
   overHero?: boolean;
+  scrolled?: boolean;
   onToggle: () => void;
 };
 
@@ -13,10 +14,10 @@ const Chevron = () => (
   </svg>
 );
 
-export default function Header({ open, overHero, onToggle }: Props) {
+export default function Header({ open, overHero, scrolled, onToggle }: Props) {
   return (
     <header
-      className={`header header--clone header--top-variant${overHero ? " header--over-hero" : ""}${open ? " is-open" : ""}`}
+      className={`header header--clone header--top-variant${overHero ? " header--over-hero" : ""}${scrolled ? " header--scrolled" : ""}${open ? " is-open" : ""}`}
     >
       <div className="content-wrapper">
         <div className="header-left-side">

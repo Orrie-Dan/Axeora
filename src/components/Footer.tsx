@@ -25,17 +25,6 @@ export default function Footer() {
           </ul>
         </div>
         <div>
-          <div className="footer-col-title">Resources</div>
-          <ul className="footer-links">
-            <li>
-              <Link to="/solutions/ai-infrastructure">Solutions</Link>
-            </li>
-            <li>
-              <Link to="/africa">UAE–Africa</Link>
-            </li>
-          </ul>
-        </div>
-        <div>
           <div className="footer-col-title">Company</div>
           <ul className="footer-links">
             <li>
@@ -49,7 +38,7 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        <div>
+        <div className="footer-col--delivery">
           <div className="footer-col-title">Delivery</div>
           <ul className="footer-links">
             <li>
